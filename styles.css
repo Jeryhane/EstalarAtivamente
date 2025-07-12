@@ -1,0 +1,427 @@
+:root{
+  --primary:#1c78c2;
+  --secondary:#ffbf00;
+  --dark:#003366;
+}
+
+body{
+  font-family:'Helvetica Neue',Arial,sans-serif;
+  line-height:1.6;
+  margin: 0;
+}
+
+.navbar-brand{
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+
+/* HERO */
+.hero{
+  position:relative;
+  background:url('https://source.unsplash.com/1600x800/?school,learning') center/cover no-repeat;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  padding: 3rem 0 2rem 0;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  padding:0 15px;
+}
+
+.hero h1{
+  font-size:3rem;
+  font-weight:700;
+}
+
+.hero p.lead{
+  font-size:1.25rem;
+}
+
+/* Carrossel Full Screen */
+#carouselMetodologias {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+#carouselMetodologias .carousel-inner {
+  height: 100vh;
+}
+
+#carouselMetodologias .carousel-item {
+  height: 100vh;
+}
+
+#carouselMetodologias .carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Botões de controle do carrossel */
+#carouselMetodologias .carousel-control-prev,
+#carouselMetodologias .carousel-control-next {
+  width: 45%;
+}
+
+article{
+  padding-left:0px;
+  padding-right:0px;
+}
+
+.card-section-content {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+section {
+  padding: 2rem 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  color: white;
+}
+
+#introducao { 
+  background-color: #c6d700; 
+  color: #000; 
+}
+
+#aplicacao { 
+  background-color: #f4b400; 
+  color: #000; 
+}
+
+#dados { 
+  background-color: #f28b00; 
+  color: #000; 
+}
+
+#diagnostico { 
+  background-color: #db4437; 
+}
+
+#acao { 
+  background-color: #3367d6; 
+}
+
+#mudanca { 
+  background-color: #00acc1; 
+}
+
+/* TOC — estilo "trilha" */
+#toc{
+  position:fixed;
+  top:110px;
+  right:2%;
+  width:220px;
+  z-index:1030;
+  transition:all .3s;
+}
+
+#toc nav{
+  position:relative;
+  padding-left:22px;
+}
+
+#toc nav::before{
+  content:'';
+  position:absolute;
+  left:9px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#d0d0d0;
+}
+
+.toc-link{
+  --active-clr:var(--primary);
+  position:relative;
+  display:block;
+  padding:.65rem 0 .65rem 1.2rem;
+  font-weight:500;
+  color:#555;
+  text-decoration:none;
+  transition:.2s;
+}
+
+.toc-link::before{
+  content:'';
+  position:absolute;
+  left:-13px;
+  top:50%;
+  transform:translateY(-50%);
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--active-clr,#d0d0d0);
+  transition:.2s;
+}
+
+.toc-link.active{
+  color:var(--active-clr);
+  font-weight:700;
+}
+
+.toc-link.active::before{
+  background:var(--active-clr);
+  width:12px;
+  height:12px;
+  box-shadow:0 0 0 3px #fff,0 0 0 5px var(--active-clr);
+}
+
+.toc-link:hover{
+  text-decoration:underline;
+  color:var(--active-clr);
+}
+
+.toc-link:hover::before{
+  background:var(--active-clr);
+}
+
+footer{
+  background:#f5f5f5;
+  padding:2rem 0;
+  margin-top:3rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width:500px){
+  #toc{
+    display:none;
+  }
+  
+  #toc.toc-mobile-active{
+    display:block;
+    position:fixed;
+    bottom:80px;
+    right:16px;
+    top:auto;
+    left:auto;
+    width:90vw;
+    max-width:340px;
+    box-shadow:0 4px 24px rgba(0,0,0,0.18);
+    border-radius:16px;
+  }
+  
+  #toc.toc-mobile-active nav{
+    padding-left:0;
+  }
+  
+  #toc.toc-mobile-active h6{
+    display:none;
+  }
+  
+  #toc.toc-mobile-active{
+    background:#fff;
+    color:#222;
+  }
+  
+  #toc.toc-mobile-active .toc-link{
+    color:#222;
+  }
+  
+  #toc.toc-mobile-active .toc-link.active{
+    color:var(--active-clr);
+  }
+  
+  #toc.toc-mobile-active .toc-link::before{
+    background:var(--active-clr,#d0d0d0);
+  }
+  
+  #toc.toc-mobile-active .toc-link.active::before{
+    background:var(--active-clr);
+  }
+  
+  #toc-fab{
+    display:flex;
+  }
+}
+
+#toc-fab{
+  display:none;
+  position:fixed;
+  bottom:16px;
+  right:16px;
+  z-index:1100;
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  border-radius:50%;
+  width:60px;
+  height:60px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.18);
+  font-size:2.2rem;
+  align-items:center;
+  justify-content:center;
+  transition:background .2s;
+  cursor:pointer;
+}
+
+#toc-fab:active,#toc-fab:focus{
+  background:var(--dark);
+  outline:none;
+}
+
+#toc-fab .toc-fab-icon {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+
+@media (min-width: 992px) {
+  #btn-secoes, #menu-secoes { 
+    display: none !important; 
+  }
+}
+
+@media (max-width: 991.98px) {
+  #btn-secoes {
+    display: flex !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    z-index: 1051;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    font-size: 1.2rem;
+  }
+  
+  #btn-secoes span {
+    display: none;
+  }
+  
+  #btn-secoes::after {
+    content: '\2630';
+    font-size: 2rem;
+    line-height: 1;
+  }
+  
+  #menu-secoes {
+    display: none;
+    position: fixed !important;
+    bottom: 84px;
+    right: 20px;
+    width: 220px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    z-index: 1052;
+    padding: 0;
+  }
+  
+  #menu-secoes .secao-introducao {
+    background: #c6d700; 
+    color: #000;
+  }
+  
+  #menu-secoes .secao-aplicacao {
+    background: #f4b400; 
+    color: #000;
+  }
+  
+  #menu-secoes .secao-dados {
+    background: #f28b00; 
+    color: #000;
+  }
+  
+  #menu-secoes .secao-diagnostico {
+    background: #db4437; 
+    color: #fff;
+  }
+  
+  #menu-secoes .secao-acao {
+    background: #3367d6; 
+    color: #fff;
+  }
+  
+  #menu-secoes .secao-mudanca {
+    background: #00acc1; 
+    color: #fff;
+  }
+  
+  #menu-secoes .list-group-item {
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.85rem 1.2rem;
+    transition: filter .15s;
+  }
+  
+  #menu-secoes .list-group-item:last-child {
+    border-bottom: none;
+  }
+  
+  #menu-secoes .list-group-item:active, #menu-secoes .list-group-item:focus {
+    filter: brightness(0.92);
+  }
+}
+
+/* Ajustes responsivos para o carrossel */
+@media (max-width: 768px) {
+  #carouselMetodologias {
+    height: 100vh;
+  }
+  
+  #carouselMetodologias .carousel-item {
+    height: 100vh;
+  }
+  
+  #carouselMetodologias .carousel-item img {
+    height: 100vh;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p.lead {
+    font-size: 1.1rem;
+  }
+  
+  /* Padding lateral para seções no mobile */
+  .card-section-content {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p.lead {
+    font-size: 1rem;
+  }
+  
+  /* Mais padding em telas muito pequenas */
+  .card-section-content {
+    padding: 2rem 1rem;
+  }
+} 
