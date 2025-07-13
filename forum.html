@@ -6,14 +6,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fórum</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/png" href="logo.png">
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+footer {
+  flex-shrink: 0;
+}
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="logo.png" alt="Logo" style="max-width:38px; height:auto; margin-right:10px;">
-      Estalar Ativamente
+      Estalar AtivaMente
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
       aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +51,8 @@
     </button>
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link" href="index.html">Gincana</a></li>
-        <li class="nav-item"><a class="nav-link" href="visao-docente.html">Visão do Docente</a></li>
-        <li class="nav-item"><a class="nav-link" href="metodologias-ativas.html">Metodologias Ativas</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Metodologias</a></li>
+        <li class="nav-item"><a class="nav-link" href="jogos.html">Jogos</a></li>
         <li class="nav-item"><a class="nav-link active" aria-current="page" href="forum.html">Fórum</a></li>
         <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
       </ul>
@@ -37,8 +66,10 @@
   <h1 class="mt-5">Fórum</h1>
   <p>Conteúdo em construção. Em breve, área de discussões e fórum.</p>
 </main>
-<footer class="text-center mt-5 mb-3">
-  <small>© 2025 Estalar Ativamente.</small>
+<footer>
+  <div class="container text-center">
+    <p class="mb-0">© 2025 Estalar AtivaMente.</p>
+  </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
